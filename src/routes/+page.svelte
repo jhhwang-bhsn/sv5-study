@@ -2,6 +2,30 @@
 	import HelloSvelte4 from '$lib/HelloSvelte4.svelte';
 	import HelloSvelte5 from '$lib/HelloSvelte5.svelte';
 	let name = 'Student1';
+	import { onMount, onDestroy } from 'svelte';
+
+	$effect.pre(() => {
+		console.log('page: $effect.pre(beforeUpdate)');
+	});
+
+	$effect.root(() => {
+		console.log('page: $effect.root');
+		return function cleanUp() {
+			console.log('page: $effect.root cleanUp');
+		};
+	});
+
+	$effect(() => {
+		console.log('page: name 변경', name);
+	});
+
+	onMount(() => {
+		console.log('page: onMount');
+	});
+
+	onDestroy(() => {
+		console.log('page: onDestroy');
+	});
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center bg-gray-100">
