@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+button {
+	@apply w-full cursor-pointer rounded-lg px-4 py-3 font-medium;
+}
