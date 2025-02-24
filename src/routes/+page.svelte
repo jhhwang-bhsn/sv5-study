@@ -1,7 +1,7 @@
 <script>
 	import HelloSvelte4 from '$lib/HelloSvelte4.svelte';
 	import HelloSvelte5 from '$lib/HelloSvelte5.svelte';
-	let name = 'Student1';
+	let name = $state('Student1');
 	import { onMount, onDestroy } from 'svelte';
 
 	$effect.pre(() => {
